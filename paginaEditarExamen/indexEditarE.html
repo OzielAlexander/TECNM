@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Examen</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#"><i class="fas fa-edit"></i> Editar Examen</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../paginaDocente/indexPanel.html"><i class="fas fa-arrow-left"></i> Volver</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Editar Examen</h2>
+        <form id="editExamenForm">
+            <label for="titulo">Título del Examen:</label>
+            <input type="text" id="titulo" name="titulo" required>
+
+            <label for="fecha">Fecha de Finalización:</label>
+            <input type="date" id="fecha" name="fecha" required>
+
+            <label for="hora">Hora Inicial:</label>
+            <input type="time" id="hora" name="hora" required>
+
+            <label for="duracionHoras">Duración del Examen:</label>
+            <div class="duration-container">
+                <input type="number" id="duracionHoras" name="duracionHoras" min="0" placeholder="Horas" required>
+                <input type="number" id="duracionMinutos" name="duracionMinutos" min="0" max="59" placeholder="Minutos" required>
+            </div>
+
+            <label for="intentos">Número de Intentos:</label>
+            <input type="number" id="intentos" name="intentos" required>
+
+            <h3>Editar Preguntas</h3>
+            <div id="questionsContainer"></div>
+
+            <button type="button" id="addQuestionButton" class="btn">Añadir Pregunta</button>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h3>Preguntas del Examen</h3>
+        <table id="questionsTable" class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Pregunta</th>
+                    <th>Opción A</th>
+                    <th>Opción B</th>
+                    <th>Opción C</th>
+                    <th>Opción D</th>
+                    <th>Respuestas Correctas</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="adminQuestionsTable">
+                <!-- Aquí se llenarán las preguntas dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

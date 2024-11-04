@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Tecnologico De Excelencia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imagenes/LOGO.png" type="image/png">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Left side with image carousel -->
+        <div class="login-left">
+            <img src="imagenes/uni1.jpg" alt="Imagen 1" class="active">
+            <img src="imagenes/uni2.jpg" alt="Imagen 2">
+            <img src="imagenes/uni3.jpg" alt="Imagen 3">
+        </div>
+        
+        <!-- Right side with form -->
+        <div class="login-right">
+            <!-- Logo and title section -->
+            <div class="logo-container">
+                <img src="imagenes/LOGO.png" alt="Logo Universidad" class="logo-img">
+                <h2>Instituto Tecnologico de Excelencia</h2>
+            </div>
+
+            <form>
+                <label for="control-number">Nombre:</label>
+                <input type="text" id="control-number" placeholder="Oziel Alexander" required>
+
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" placeholder="********" required>
+
+                <!-- New options for selecting user type -->
+                <label for="roleSeleccionado">Ingresar como:</label>
+                <select id="roleSeleccionado" name="roleSeleccionado" required>
+                    <option value="estudiante">Estudiante</option>
+                    <option value="administrador">maestro</option>
+                </select>
+
+                <button type="submit">Iniciar sesión</button>
+            </form>
+
+            <!-- Forgot password and register links -->
+            <div class="extra-options">
+                <a href="#" id="openForgotPassword">Olvidé mi Contraseña</a>
+                <a href="#" id="openModal">Registrarme como Estudiante</a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal REGISTRO -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- Add logo above the title -->
+            <img src="imagenes/LOGO.png" alt="Logo Universidad" class="logo-modal">
+            <h2>Registro de Estudiante Nuevo</h2>
+            <form id="registerForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Introduce tu nombre" required>
+
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" placeholder="Introduce tu correo" required>
+
+                <label for="new-password">Contraseña:</label>
+                <input type="password" id="new-password" placeholder="Introduce una contraseña" required>
+
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+<div id="forgotPasswordModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Recuperar Contraseña</h2>
+        <form id="forgotPasswordForm">
+            <label for="forgot-email">Introduce tu correo electrónico:</label>
+            <input type="email" id="forgot-email" placeholder="Correo electrónico" required>
+            <button type="submit">Enviar correo de recuperación</button>
+        </form>
+    </div>
+</div>
+
+<script type="module" src="registro.js"></script>
+<script type="module" src="correo.js"></script>
+<script src = "carrusel.js"></script>
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "6kJFgb51PV_aBIMtP",
+      });
+   })();
+</script>
+
+</body>
+</html>

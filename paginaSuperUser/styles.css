@@ -1,0 +1,369 @@
+/* Colores de la paleta */
+:root {
+    --color-bg: #F3F8FB;
+    --color-primary: #B0E0E6;
+    --color-secondary: #4682B4;
+    --color-accent: #1D4E89;
+    --color-text: #03396C;
+    --color-highlight: #94d2bd;
+    --color-btn-primary: #4682B4;
+    --color-btn-hover: #1D4E89;
+    --color-input-bg: #ffffff;
+    --color-input-border: #4682B4;
+    --color-input-focus: #1D4E89;
+}
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-bg);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #03396C;
+}
+
+#logoutButton {
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#logoutButton:hover {
+    background-color: var(--color-secondary);
+    transform: scale(1.05);
+}
+
+/* Container */
+.admin-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 95%;
+    margin: auto;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid var(--color-input-border);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--color-input-focus);
+    box-shadow: 0 0 8px rgba(29, 78, 137, 0.3);
+}
+
+select {
+    padding: 10px;
+    border: 1px solid var(--color-input-border);
+    border-radius: 8px;
+    background-color: var(--color-input-bg);
+}
+
+button {
+    background-color: var(--color-btn-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--color-btn-hover);
+    transform: scale(1.05);
+}
+
+/* Table */
+.user-list h2 {
+    color: var(--color-text);
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+table tbody tr:hover {
+    background-color: var(--color-highlight);
+}
+
+table td {
+    color: var(--color-text);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+table td:hover {
+    background-color: #e0f7fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal */
+.modal-agregar-usuario {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-agregar-usuario .modal-content {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s;
+}
+
+.modal-agregar-usuario .close {
+    color: #4A628A;
+    font-size: 32px;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+}
+
+.modal-agregar-usuario .close:hover {
+    color: #D9534F;
+}
+
+h2 {
+    color: var(--color-accent);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    color: var(--color-text);
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-input-border);
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: var(--color-input-focus);
+}
+
+button[type="submit"] {
+    background-color: var(--color-btn-primary);
+    width: 100%;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--color-btn-hover);
+}
+
+/* Estilizar los inputs para centrar */
+.modal-agregar-usuario .modal-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar los inputs */
+}
+
+.modal-agregar-usuario .form-group {
+    width: 100%; /* Mantener ancho completo para que los inputs no estén desalineados */
+    max-width: 450px; /* Ancho máximo del input */
+}
+
+input[type="text"], input[type="email"], input[type="password"], select {
+    width: 100%; /* Ocupa todo el espacio disponible */
+    margin: 5px 0; /* Espacio entre cada input */
+    padding: 10px; /* Aumentar el espacio interno */
+    border: 1px solid var(--color-input-border);
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: var(--color-input-focus);
+    outline: none; /* Eliminar el borde de enfoque por defecto */
+}
+
+/* Botón de envío */
+button[type="submit"] {
+    background-color: var(--color-btn-primary);
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--color-btn-hover);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Media Query para pantallas medianas (tabletas y móviles grandes) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .admin-container {
+        padding: 15px;
+    }
+
+    table th, table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .modal-agregar-usuario .modal-content {
+        width: 70%;
+        padding: 20px;
+    }
+
+    .modal-agregar-usuario h2 {
+        font-size: 18px;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"], select {
+        font-size: 14px;
+        padding: 10px;
+        width: 90%;
+    }
+    button {
+        font-size: 14px;
+        padding: 10px;
+        
+    }
+
+    .table td .action-buttons button {
+        margin-bottom: 5px; /* Espacio entre botones */
+    }
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    .search-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    table th, table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .modal-agregar-usuario .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .modal-agregar-usuario h2 {
+        font-size: 16px;
+    }
+
+    .form-group {
+        width: 100%;
+        max-width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+    }
+
+    input[type="text"], input[type="email"], input[type="password"], select {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    button[type="submit"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .table td .action-buttons button {
+        margin-bottom: 5px; /* Espacio entre botones */
+    }
+}

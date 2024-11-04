@@ -1,0 +1,307 @@
+:root {
+    --color-bg: #F3F8FB;
+    --color-primary: #B0E0E6;
+    --color-secondary: #4682B4;
+    --color-accent: #1D4E89;
+    --color-text: #03396C;
+    --color-highlight: #94d2bd;
+}
+
+/* Estilos generales */
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/* Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: #03396C;
+}
+
+header a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 1.1rem;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header a:hover {
+    background-color: var(--color-secondary);
+    color: #ffffff;
+}
+
+/* Estilo para las burbujas de examen */
+.examen-burbuja {
+    background-color: var(--color-primary);
+    border-radius: 25px;
+    padding: 15px 25px;
+    margin: 15px;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    color: var(--color-accent);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.examen-burbuja:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    background-color: var(--color-highlight);
+}
+
+/* Estilo para los modales */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-highlight);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    max-width: 800px;
+}
+
+.modal-content {
+    color: var(--color-text);
+}
+
+.modal h3 {
+    color: var(--color-accent);
+    margin-bottom: 20px;
+}
+
+.close {
+    color: var(--color-accent);
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--color-secondary);
+}
+
+/* Estilo para la tabla en el modal */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+    padding: 15px;
+    text-align: center;
+    font-size: 1rem;
+    border: 1px solid var(--color-secondary);
+}
+
+.table th {
+    background-color: var(--color-secondary);
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.table td {
+    background-color: #ffffff;
+    color: var(--color-text);
+}
+
+.table tbody tr {
+    transition: background-color 0.3s;
+}
+
+.table tbody tr:hover {
+    background-color: var(--color-highlight);
+}
+
+/* Estilo para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-bg);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 800px;
+}
+
+.modal-content {
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--color-text);
+}
+
+.close:hover {
+    color: var(--color-accent);
+}
+
+/* Botón de acción en la tabla */
+.action-btns button {
+    background-color: var(--color-accent);
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.action-btns button:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Botón de acción */
+button {
+    background-color: var(--color-accent);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--color-secondary);
+    transform: scale(1.05);
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    header a {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+        margin-top: 5px;
+    }
+
+    .examen-burbuja {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .modal {
+        padding: 15px;
+    }
+
+    .table th, .table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .action-btns button {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+#certificado {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    visibility: visible; /* Aseguramos que sea visible para html2canvas */
+}
+
+/* Estilos para el certificado */
+.certificado {
+    border: 8px solid #0a3d62;
+    padding: 30px;
+    margin: 0 auto;
+    width: 700px;
+    background-color: #ffffff;
+    border-radius: 0;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    color: #333;
+}
+
+.certificado .logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.certificado .logo {
+    width: 100px;
+    height: auto;
+}
+
+.certificado h1 {
+    color: #0a3d62;
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.certificado p {
+    font-size: 18px;
+    color: #333;
+    margin: 5px 0;
+}
+
+.certificado .nombre {
+    font-weight: bold;
+    font-size: 26px;
+    color: #0a3d62;
+    margin-top: 10px;
+    border-bottom: 1px dashed #0a3d62;
+    display: inline-block;
+    padding: 5px;
+}
+
+.certificado .puntuacion {
+    font-size: 20px;
+    color: #0a3d62;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.certificado h2 {
+    color: #38ada9;
+    font-size: 20px;
+    margin-top: 20px;
+}

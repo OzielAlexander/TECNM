@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados del Estudiante</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#"><i class="fas fa-chart-bar"></i> Resultados</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../paginaEstudiante/indexEstudiante.html"><i class="fas fa-arrow-left"></i> Volver</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenedor de resultados -->
+    <div class="container">
+        <h2>Exámenes Realizados</h2>
+        <table class="table" id="resultadosTabla">
+            <thead>
+                <tr>
+                    <th>Título del Examen</th>
+                    <th>Puntuación</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Los resultados se llenarán dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal para mostrar detalles del examen -->
+    <div id="modalDetalles" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="tituloExamenDetalle">Detalles del Examen</h3>
+            <div id="detallesExamen">
+                <!-- Los detalles se mostrarán aquí -->
+            </div>
+            <button id="descargarPDF" class="btn"><i class="fas fa-download"></i> Descargar PDF</button>
+        </div>
+    </div>
+
+    <!-- Importar jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

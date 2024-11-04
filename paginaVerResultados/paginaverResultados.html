@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados de Exámenes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Resultados de Exámenes</h1>
+        <a href="../paginaDocente/indexPanel.html">Volver</a>
+    </header>
+
+    <div id="examenesContainer">
+        <!-- Aquí se cargarán las burbujas de los exámenes -->
+    </div>
+    
+    <!-- Modal para mostrar la lista de estudiantes -->
+    <div id="modalResultados" class="modal">
+        <div class="modal-content">
+            <span class="close" id="cerrarModalResultados">&times;</span>
+            <h3 id="tituloExamenResultados">Resultados del Examen</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Estudiante</th>
+                        <th>Puntuación</th>
+                        <th>Aciertos</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="listaEstudiantes">
+                    <!-- Se cargarán aquí los estudiantes -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Div oculto para el certificado -->
+    <div class="certificado" id="certificado" style="display: none;">
+        <div class="logo-container">
+            <img src="LOGO.png" alt="Logo" class="logo">
+        </div>
+        <h1>Certificado de Reconocimiento</h1>
+        <p>Este certificado se otorga a:</p>
+        <div class="nombre" id="certificado-nombre">[Nombre del participante]</div>
+        <p>En reconocimiento a su destacada participación y desempeño.</p>
+        <p class="puntuacion">Puntuación alcanzada: <span id="certificado-puntuacion">100%</span></p>
+        <h2>Fecha: <span id="certificado-fecha"></span></h2>
+    </div>
+
+    <!-- Incluir las librerías html2canvas y jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

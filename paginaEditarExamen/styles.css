@@ -1,0 +1,299 @@
+/* Colores de la paleta */
+:root {
+    
+    
+    
+    --color-highlight: #88C9BF;
+    --color-cell-hover: #A6D8E7;
+    --color-input-bg: #ffffff;
+    
+    --color-table-header: #B0E0E6;
+    --color-table-row-even: #DFF2EB;
+    --color-table-row-hover: #C4E0DD;
+    --color-bg: #F3F8FB;
+    --color-primary: #B0E0E6;
+    --color-secondary: #4682B4;
+    --color-accent: #1D4E89;
+    --color-text: #03396C;
+    
+    --color-btn-primary: #4682B4;
+    --color-btn-hover: #1D4E89;
+    --color-input-bg: #ffffff;
+    --color-input-border: #4682B4;
+    --color-input-focus: #1D4E89;
+}
+
+/* Diseño general */
+body {
+    background-color: var(--color-bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.navbar .logo a {
+    text-decoration: none;
+    font-size: 1.8em;
+    color: var(--color-text);
+    font-weight: bold;
+}
+
+/* Estilo de los enlaces en la barra de navegación */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+/* Títulos */
+h2, h3 {
+    color: var(--color-accent);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo de los labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Ajuste de los inputs */
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid var(--color-input-border);
+    border-radius: 8px;
+    background-color: var(--color-input-bg);
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="number"]:focus {
+    border-color: var(--color-input-focus);
+    box-shadow: 0 0 5px rgba(29, 78, 137, 0.3);
+    outline: none;
+}
+
+/* Botones */
+.btn {
+    background-color: var(--color-btn-primary);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn:hover {
+    background-color: var(--color-btn-hover);
+    transform: scale(1.02);
+}
+
+
+/* Estilo de la tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-text);
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+}
+
+.table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid var(--color-secondary);
+    color: var(--color-text);
+    transition: background-color 0.3s;
+}
+
+/* Cambiar de color al pasar el cursor por las celdas */
+.table td:hover {
+    background-color: var(--color-cell-hover);
+}
+
+/* Fila alterna */
+.table tr:nth-child(even) {
+    background-color: var(--color-table-row-even);
+}
+
+/* Botón Eliminar estilizado */
+.delete-btn {
+    background-color: #D0021B; /* Rojo */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.delete-btn:hover {
+    background-color: #A80014; /* Rojo más oscuro */
+    box-shadow: 0 4px 8px rgba(168, 0, 20, 0.3);
+}
+
+.delete-btn i {
+    margin-right: 5px;
+}
+
+/* Estilo general para el select */
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid var(--color-input-border);
+    background-color: var(--color-input-bg);
+    color: var(--color-text);
+    font-size: 1rem;
+    appearance: none; /* Eliminar el estilo por defecto del navegador */
+    -webkit-appearance: none; /* Para navegadores WebKit */
+    -moz-appearance: none; /* Para Firefox */
+    transition: border-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%2303396C" d="M2 0L0 2h4z"/></svg>'); /* Flecha */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
+/* Hover y focus */
+select:hover {
+    border-color: var(--color-accent);
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--color-input-focus);
+    box-shadow: 0 0 5px rgba(29, 78, 137, 0.3);
+}
+
+/* Estilo de las opciones */
+select option {
+    padding: 10px;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    font-size: 1rem;
+}
+
+/* Mejoras de responsividad */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .table th, .table td {
+        padding: 8px;
+        font-size: 0.9rem;
+        min-width: 100px; /* Añade un ancho mínimo para las columnas */
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    input[type="number"],
+    select {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .btn {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h2, h3 {
+        font-size: 1.2rem;
+    }
+
+    .table th, .table td {
+        padding: 6px;
+        font-size: 0.8rem;
+        min-width: 80px; /* Reduce el ancho mínimo para pantallas más pequeñas */
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    input[type="number"],
+    select {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+
+    .btn {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+}

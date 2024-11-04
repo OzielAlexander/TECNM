@@ -1,0 +1,335 @@
+:root {
+    --color-bg: #F3F8FB;
+    --color-primary: #B0E0E6;
+    --color-secondary: #4682B4;
+    --color-accent: #1D4E89;
+    --color-text: #03396C;
+    --color-highlight: #88C9BF;
+    --color-btn-primary: #4682B4;
+    --color-btn-hover: #1D4E89;
+    --color-input-bg: #ffffff;
+    --color-input-border: #4682B4;
+    --color-input-focus: #1D4E89;
+}
+
+/* Diseño general */
+body {
+    background-color: var(--color-bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.navbar .logo a {
+    text-decoration: none;
+    font-size: 2em;
+    color: var(--color-text);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar .logo a:hover {
+    color: var(--color-accent);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+/* Contenedor de búsqueda */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+    width: 70%;
+    padding: 12px;
+    font-size: 1em;
+    border: 2px solid var(--color-secondary);
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-container input[type="text"]:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-container button {
+    padding: 12px 20px;
+    font-size: 1em;
+    background-color: var(--color-secondary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: var(--color-accent);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabla de resultados */
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.table th, .table td {
+    padding: 15px;
+    text-align: center;
+    color: var(--color-text);
+    background-color: #ffffff;
+    border: 1px solid var(--color-secondary);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.table th {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+}
+
+.table td:hover {
+    
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Estilo de los botones de acción */
+.ver-detalles-btn {
+    background-color: var(--color-secondary); /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1em; /* Tamaño de fuente */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Manita al pasar por encima */
+    transition: background 0.3s ease, transform 0.2s, box-shadow 0.2s; /* Transiciones */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+    display: inline-flex; /* Para alinear el ícono y el texto */
+    align-items: center; /* Alinear verticalmente */
+    gap: 8px; /* Espacio entre el ícono y el texto */
+}
+
+.ver-detalles-btn:hover {
+    background-color: var(--color-accent); /* Color de fondo al pasar el cursor */
+    transform: translateY(-2px); /* Efecto de levantar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+.ver-detalles-btn i {
+    font-size: 1.2em; /* Tamaño del ícono */
+}
+
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .table th, .table td {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    .search-container input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 8px;
+    }
+
+    .search-container button {
+        width: 100%;
+        border-radius: 8px;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+}
+
+/* Estilo del modal */
+.modal-content {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Título del modal */
+.modal-content h2 {
+    color: var(--color-accent);
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: 5px;
+}
+
+/* Estilo de la pregunta */
+.modal-content p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: var(--color-text);
+}
+
+.modal-content .incorrect {
+    color: #D32F2F; /* Rojo para incorrecto */
+    font-weight: bold;
+}
+
+.modal-content .correct {
+    color: #388E3C; /* Verde para correcto */
+    font-weight: bold;
+}
+
+/* Botón de cerrar */
+.modal-content .close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-content .close:hover {
+    color: var(--color-accent);
+}
+
+/* Estilo del botón de "Generar PDF" */
+
+#descargarPDF {
+    background-color: var(--color-secondary);
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#descargarPDF i {
+    font-size: 1.2em; /* Tamaño del ícono */
+}
+
+#descargarPDF:hover {
+    background-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto de foco */
+#descargarPDF:focus {
+    outline: 2px solid var(--color-accent);
+}
+
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Adaptación para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .navbar .logo a {
+        font-size: 1.5em;
+    }
+
+    .nav-links a {
+        font-size: 1em;
+    }
+
+    .table th, .table td {
+        font-size: 0.8em;
+        padding: 8px;
+    }
+}

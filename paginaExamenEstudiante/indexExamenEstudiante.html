@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Realizar Examen</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#"><i class="fas fa-edit"></i> Examen</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../paginaEstudiante/indexEstudiante.html"><i class="fas fa-arrow-left"></i> Volver</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenedor de la cámara fuera del examen -->
+    <div class="camera-container">
+        <h3><i class="fas fa-video"></i> Cámara</h3>
+        <video id="video" width="320" height="240" autoplay></video>
+    </div>
+
+    <!-- Contenedor del examen -->
+    <div class="container">
+        <h2 id="tituloExamen">Título del Examen</h2>
+        <form id="examenEstudianteForm">
+            <div id="preguntasContainer">
+                <!-- Las preguntas se cargarán dinámicamente -->
+            </div>
+            <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Enviar</button>
+        </form>
+    </div>
+
+    <div id="modalTiempoExpirado" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('modalTiempoExpirado').style.display='none'">&times;</span>
+            <h3>Tiempo Expirado</h3>
+            <p>El tiempo para realizar este examen ha terminado y ya no puedes ingresar.</p>
+            <button onclick="window.location.href = '../paginaEstudiante/indexEstudiante.html';">Volver al Portal</button>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Preguntas</title>
+    <!-- Archivo CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Barra de navegación personalizada -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#"><i class="fas fa-file-alt"></i> Examen</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../paginaCreacionExamen/indexExamen.html" id="nuevoExamenLink"><i class="fas fa-plus-circle"></i> Nuevo Examen</a></li>
+                <li><a href="../paginaVerResultados/paginaverResultados.html"><i class="fas fa-clipboard-list"></i> Exámenes Cerrados</a></li>
+            </ul>
+            <!-- Icono de perfil con menú desplegable usando tu imagen local -->
+            <div class="profile-menu">
+                <img src="src/user.png" alt="Profile" id="profile-icon">
+                <ul class="dropdown" id="dropdown-menu" style="display: none;">
+                    <li id="verPerfil"><a href="#"><i class="fas fa-user"></i> Ver Perfil</a></li>
+                    <li id="modificarPerfil"><a href="#"><i class="fas fa-user-edit"></i> Modificar Perfil</a></li>
+                    <li id="logout-btn"><a href="../USUARIO.html"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenedor de tabla -->
+    <div class="container table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-heading"></i> Título del examen</th>
+                    <th><i class="fas fa-info-circle"></i> Estado</th>
+                    <th><i class="fas fa-sync-alt"></i> Cantidad de intentos</th>
+                    <th><i class="fas fa-hourglass-half"></i> Duración del examen</th>
+                    <th><i class="fas fa-calendar-alt"></i> Fecha y hora de cierre</th>
+                    <th><i class="fas fa-cogs"></i> Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="examenesTabla">
+                <!-- Aquí se agregarán dinámicamente las filas -->
+            </tbody>
+        </table>
+    </div>
+
+<!-- Modal para mostrar el código del examen -->
+<div id="modalCodigo" class="modal">
+    <div class="modal-content">
+        <span class="close" id="cerrarModalCodigo">&times;</span>
+        <h2>Código del Examen</h2>
+        <p id="modalCodigoContentText"></p>
+        <button id="cerrarModalCodigoBoton">Cerrar</button> <!-- Cambié el id para evitar conflictos -->
+    </div>
+</div>
+
+
+
+<!-- Modal para ver el perfil -->
+<div id="modalVerPerfil" class="modal-ver-perfil" style="display: none;">
+    <div class="modal-content">
+        <span id="cerrarModalVerPerfil" class="close">&times;</span>
+        <h2>Perfil del Maestro</h2>
+        <p><strong>Nombre:</strong> <span id="nombreMaestro"></span></p>
+        <p><strong>Email:</strong> <span id="emailMaestro"></span></p>
+    </div>
+</div>
+
+<!-- Modal para modificar el perfil -->
+<div id="modalModificarPerfil" class="modal-ver-perfil" style="display: none;">
+    <div class="modal-content">
+        <span id="cerrarModalModificarPerfil" class="close">&times;</span>
+        <h2>Modificar Perfil</h2>
+        <form id="formModificarPerfil">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombreModificar" name="nombre" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="emailModificar" name="email" required>
+
+            <button type="submit" id="guardarCambios">Guardar Cambios</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+    <!-- Archivo JS personalizado -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>

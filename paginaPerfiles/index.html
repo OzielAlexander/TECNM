@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Estudiantes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+</head>
+<body>
+
+    <header>
+        <h1><i class="fas fa-user"></i> Estatus de Estudiantes</h1>
+        <button onclick="regresar()" class="back-button">Regresar</button>
+    </header>
+    
+
+<div class="admin-container">
+    
+    <!-- Tabla única de estudiantes -->
+    <div class="student-section">
+        <table id="studentsTable">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Filas de estudiantes generadas dinámicamente aquí -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script type="module" src="app.js"></script>
+<script>
+    function regresar() {
+    window.location.href = "../paginaDocente/indexPanel.html"; // Ruta relativa para regresar
+}
+</script>
+</body>
+</html>

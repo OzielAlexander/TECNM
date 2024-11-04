@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal del Estudiante</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#"><i class="fas fa-graduation-cap"></i> Estudiante</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" id="examenesTerminadosLink"><i class="fas fa-check-circle"></i> Exámenes Terminados</a></li>
+                <li><a href="#" id="cerrarSesionBtn"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenedor de búsqueda -->
+    <div class="container">
+        <div class="search-container">
+            <input type="text" id="codigoExamen" placeholder="Ingrese el código del examen">
+            <button id="buscarExamen" class="btn"><i class="fas fa-search"></i> Buscar</button>
+        </div>
+
+        <!-- Tabla de resultados -->
+        <table class="table" id="tablaExamenes">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Intentos Disponibles</th>
+                    <th>Duración</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Las filas se llenarán dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

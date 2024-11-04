@@ -1,0 +1,444 @@
+/* Colores de la paleta */
+:root {
+    --color-bg: #F3F8FB;
+    --color-primary: #B0E0E6;
+    --color-secondary: #4682B4;
+    --color-accent: #1D4E89;
+    --color-text: #03396C;
+    
+    --color-btn-primary: #4682B4;
+    --color-btn-hover: #1D4E89;
+    --color-input-bg: #ffffff;
+    --color-input-border: #4682B4;
+    --color-input-focus: #1D4E89;
+}
+#cerrarModalCodigo {
+    display: none;
+}
+
+#cerrarModalCodigo.close {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#cerrarModalCodigo.close:hover {
+    color: var(--color-btn-hover);
+}
+
+/* Diseño general */
+body {
+    background-color: var(--color-bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.navbar .logo a {
+    text-decoration: none;
+    font-size: 2em;
+    color: var(--color-text);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar .logo a:hover {
+    color: var(--color-accent);
+}
+
+/* Estilo de los enlaces en la barra de navegación */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
+/* Estilo del icono de perfil */
+.profile-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-menu img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid var(--color-secondary);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-menu img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--color-accent);
+}
+
+/* Menú desplegable */
+.dropdown {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: var(--color-secondary);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    list-style-type: none;
+    padding: 10px 0;
+    margin: 0;
+    width: 180px;
+    z-index: 10;
+    animation: fadeIn 0.3s ease;
+}
+
+.dropdown li {
+    padding: 10px 20px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.dropdown li:hover {
+    background-color: var(--color-highlight);
+}
+
+.dropdown a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: bold;
+}
+
+/* Mejorar el diseño de la tabla */
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Espaciado entre filas */
+}
+
+.table th, .table td {
+    padding: 15px;
+    text-align: center;
+    color: var(--color-text);
+    background-color: #ffffff; /* Fondo blanco para contraste */
+    border: 1px solid var(--color-secondary);
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+/* Encabezados de la tabla */
+.table th {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover para las celdas */
+.table td:hover {
+    background-color: var(--color-highlight);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Estilo de los botones de acción */
+.action-btns button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 3px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón azul (Ver y Editar) */
+.action-btns .editar-btn {
+    background-color: #4A90E2; /* Azul */
+    color: #ffffff;
+}
+
+.action-btns .editar-btn:hover {
+    background-color: #357ABD; /* Azul más oscuro */
+}
+
+/* Botón amarillo (Publicar) */
+.action-btns .publicar-btn {
+    background-color: #F5A623; /* Amarillo */
+    color: #ffffff;
+}
+
+.action-btns .publicar-btn:hover {
+    background-color: #D48819; /* Amarillo más oscuro */
+}
+
+/* Botón rojo (Borrar) */
+.action-btns .borrar-btn {
+    background-color: #D0021B; /* Rojo */
+    color: #ffffff;
+}
+
+.action-btns .borrar-btn:hover {
+    background-color: #A80014; /* Rojo más oscuro */
+}
+
+/* Botón gris (Ir a Perfiles) */
+.action-btns .perfil-btn {
+    background-color: #2f4357; /* Gris */
+    color: #ffffff;
+}
+
+.action-btns .perfil-btn:hover {
+    background-color: #263646; /* Gris más oscuro */
+}
+
+
+/* Estilo adicional para filas de la tabla */
+.table tbody tr {
+    border-radius: 10px; /* Bordes redondeados */
+    transition: all 0.3s ease;
+}
+
+
+/* Modales */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+.modal .modal-content {
+    position: relative;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal button {
+    background-color: var(--color-btn-primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.modal button:hover {
+    background-color: var(--color-btn-hover);
+}
+
+
+/* Contenedor del contenido del modal */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botón de cierre */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #000;
+}
+
+/* Título del modal */
+.modal-content h2 {
+    font-size: 24px;
+    color: #1D4E89; /* Azul más oscuro */
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-content label {
+    font-size: 14px;
+    color: #03396C; /* Azul más claro */
+}
+
+.modal-content input {
+    padding: 8px;
+    border: 1px solid #4682B4;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.modal-content input:focus {
+    border-color: #1D4E89;
+    box-shadow: 0 0 5px rgba(29, 78, 137, 0.3);
+}
+
+/* Botón de guardar */
+.modal-content button {
+    background-color: #4682B4;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #1D4E89;
+}
+
+
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Estilo de los botones dentro de los modales */
+.modal button {
+    background-color: var(--color-btn-primary);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.modal button:hover {
+    background-color: var(--color-btn-hover);
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .table th, .table td {
+        padding: 8px;
+        font-size: 0.85em;
+    }
+
+    .profile-menu img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Adaptación para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .navbar .logo a {
+        font-size: 1.5em;
+    }
+
+    .nav-links a {
+        font-size: 1em;
+    }
+
+    .table th, .table td {
+        padding: 5px;
+        font-size: 0.75em;
+    }
+
+    .action-btns button {
+        padding: 6px 8px;
+        font-size: 0.8em;
+    }
+}

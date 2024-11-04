@@ -1,0 +1,236 @@
+/* Colores de la paleta */
+:root {
+    --color-bg: #F3F8FB;
+    --color-primary: #B0E0E6;
+    --color-secondary: #4682B4;
+    --color-accent: #4A628A;
+    --color-text: #03396C;
+    --color-highlight: #94d2bd;
+    --color-btn-primary: #4682B4;
+    --color-btn-hover: #1D4E89;
+    --color-input-bg: #ffffff;
+    --color-input-border: #4682B4;
+    --color-input-focus: #1D4E89;
+}
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-bg);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #005f73;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #03396C;
+}
+
+.back-button {
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Container */
+.admin-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 95%;
+    margin: auto;
+}
+
+/* Colores de la paleta */
+:root {
+    --color-bg: #F3F8FB;
+    --color-primary: #B0E0E6;
+    --color-secondary: #4682B4;
+    --color-accent: #1D4E89;
+    --color-text: #03396C;
+    --color-highlight: #94d2bd;
+    --color-btn-primary: #4682B4;
+    --color-btn-hover: #1D4E89;
+    --color-input-bg: #ffffff;
+    --color-input-border: #4682B4;
+    --color-input-focus: #1D4E89;
+}
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-bg);
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.admin-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 95%;
+    margin: auto;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px; /* Espaciado entre filas */
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border: none;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+table th {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+
+table tbody tr:hover {
+    background-color: var(--color-highlight);
+}
+
+/* Celdas y Hover */
+table td {
+    color: var(--color-text);
+}
+
+table td:hover {
+    background-color: var(--color-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos condicionales para los estados */
+td.estado-activo {
+    color: #28a745; /* Verde */
+    font-weight: bold;
+}
+
+td.estado-inactivo {
+    color: #dc3545; /* Rojo */
+    font-weight: bold;
+}
+
+td.estado-resolviendo {
+    color: #ffc107; /* Amarillo */
+    font-weight: bold;
+}
+
+
+/* Estilo para el hover de las celdas */
+table td {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+table td:hover {
+    background-color: #e0f7fa; /* Color de resaltado */
+}
+
+/* Mejoras de responsividad para dispositivos móviles */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 15px;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    .back-button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .admin-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    table th, table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    table {
+        border-spacing: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 8px 10px;
+    }
+
+    header h1 {
+        font-size: 16px;
+    }
+
+    .back-button {
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+
+    .admin-container {
+        padding: 10px;
+    }
+
+    table th, table td {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    table {
+        border-spacing: 0 5px;
+    }
+
+    /* Ajustes adicionales para mejorar la visualización */
+    table th {
+        font-size: 14px;
+    }
+
+    table td {
+        font-size: 11px;
+    }
+}
